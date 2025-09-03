@@ -6,45 +6,68 @@ body {
     font-family: vars.$font-main;
     
     .product-content {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: start;
-    
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: start;
 
-        .product-section_list {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            gap: 40px;
-            padding: 20px;
-
-            .card-container {
+        .product-section {
+            width: 100%;
+       
+            .product-section_list {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                gap: 40px;
                 padding: 20px;
-                        
-                .card-image {
-                    width: 40%;
+                width: 70%;
+                
+                .card-container {
+                    padding: 20px;
+                            
+                    .card-image {
+                        width: 40%;
+                    }
+                    .card-title {
+                        padding: 20px 50px 0 50px;
+                        color: rgb(110, 109, 109);
+                        font-weight: 600;
+                    }
+                    .card-price {
+                        color: rgb(76, 75, 75);
+                        font-weight: 600;
+                    }
+                    .card-button {
+                        margin-top: 10px;
+                        padding: 8px;
+                        border-radius: 7px;
+                        background-color: rgb(61, 162, 61);
+                        color: white;
+                        font-weight: 600;
+                    }
                 }
-                .card-title {
-                    padding: 20px 50px 0 50px;
-                    color: rgb(110, 109, 109);
-                    font-weight: 600;
-                }
-                .card-price {
-                    color: rgb(76, 75, 75);
-                    font-weight: 600;
-                }
-                .card-button {
-                    margin-top: 10px;
-                    padding: 8px;
-                    border-radius: 7px;
-                    background-color: rgb(61, 162, 61);
-                    color: white;
-                    font-weight: 600;
+            }
+            .aside {
+                width: 30%;
                 }
             }
         }
 
     }
+
+
+@media screen and (min-width: 700px) {
+    
+    .product-content {
+        .aside {
+            display: flex;
+            width: 40%;
+        }
+        .product-section {
+            width: 60%;
+        }
+    }
+
+    
 }
