@@ -53,6 +53,7 @@ const renderSelectProduct = () => {
     selectList.innerHTML = ""; 
     selectProduct.forEach((product, index) => {
     let li = document.createElement("li");
+    li.classList.add("select-card");
     let selectImg = document.createElement("img")
     selectImg.src = product.image;
     let selectTitle = document.createElement("p");
