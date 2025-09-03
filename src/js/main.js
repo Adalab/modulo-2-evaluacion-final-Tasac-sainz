@@ -5,7 +5,7 @@ console.log('>> Ready :)');
 const htmlListProduct = document.querySelector(".product-section_list");
 const selectList = document.querySelector(".select-product");
 let selectProduct = [];
-selectList.textContent = selectProduct;
+
 
 const buildCard = (product) => {
     const cardProduct = document.createElement ("li")
@@ -22,13 +22,19 @@ const buildCard = (product) => {
     const cardBtn = document.createElement ("button");
     cardBtn.classList.add ("card-button");
     cardBtn.textContent = "Comprar";
-
+                                                      //el evento tiene que estar dentro de buildCard porque es donde existen los elementos que queremos escuchar (la función que crea los elementos de aside está más abajo: renderSelectProduct)
     cardBtn.addEventListener("click", () => {
-        selectProduct.push(product);
-        console.log("Has añadido al carrito:", product.title);
-        renderSelectProduct();
+        const indexSelectProduct = selectProduct.findIndex (select => select.id === product.id)
+        if (indexSelectProduct === -1){
+            selectProduct.push(product);
+            cardBtn.textContent = "Quitar del carrito";
+            
+        } else {
+            selectProduct.splice(indexSelectProduct,1);
+            cardBtn.textContent ="Comprar";
         }
-    )
+        renderSelectProduct();
+    });
 
     cardProduct.appendChild (cardImg);
     cardProduct.appendChild (cardTitle);
@@ -54,20 +60,31 @@ const renderSelectProduct = () => {
     selectProduct.forEach((product, index) => {
     let li = document.createElement("li");
     li.classList.add("select-card");
-    let selectImg = document.createElement("img")
+    const deleteIcon =document.createElement("button");
+    deleteIcon.textContent = "🗑️";
+    deleteIcon.classList.add("remove-to-select");
+    let selectImg = document.createElement("img");
     selectImg.src = product.image;
     let selectTitle = document.createElement("p");
     selectTitle.textContent = product.title;
     let selectPrice = document.createElement ("p");
     selectPrice.textContent = product.price;
+    li.appendChild(deleteIcon);
     li.appendChild(selectImg);
     li.appendChild(selectTitle);
     li.appendChild(selectPrice);
     selectList.appendChild(li);
+
+    deleteIcon.addEventListener ("click", () => {
+        const indexSelectProduct = selectProduct.findIndex (select => select.id === product.id);
+        selectProduct.splice(indexSelectProduct,1);
+        renderSelectProduct();
+    })
 })};
 
 
 renderProduct();
+
     
     
     
