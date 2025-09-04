@@ -29,9 +29,9 @@ const buildCard = (product) => {
     const cardBtn = document.createElement ("button");
     cardBtn.classList.add ("card-button");
     cardBtn.textContent = isSelected ? "Quitar del carrito" : "Comprar";
-    console.log(isSelected);
+    isSelected ? cardBtn.classList.add("delete-button-card") : "";
     cardBtn.dataset.id = product.id;    //para guardar el id del producto asociado a cada botón y usarlo con el botón de papelera
-                                                      //el evento tiene que estar dentro de buildCard porque es donde existen los elementos que queremos escuchar (la función que crea los elementos de aside está más abajo: renderSelectProduct)
+    //el evento tiene que estar dentro de buildCard porque es donde existen los elementos que queremos escuchar (la función que crea los elementos de aside está más abajo: renderSelectProduct)
     cardBtn.addEventListener("click", () => {
         const indexSelectProduct = selectProducts.findIndex (select => select.id === product.id)
         if (indexSelectProduct === -1){       
@@ -42,8 +42,7 @@ const buildCard = (product) => {
         }
         renderSelectProduct();
         renderProducts(initialProducts);
-        
-    });
+        });
 
     cardProduct.appendChild (cardImg);
     cardProduct.appendChild (cardTitle);
@@ -55,7 +54,6 @@ const buildCard = (product) => {
 
 const renderProducts= (products) => {
         htmlListProduct.innerHTML="";
-        console.log(products);
         products.forEach (product => {  
             const card = buildCard(product); 
             htmlListProduct.appendChild(card);
@@ -76,7 +74,7 @@ const loadProduct = () => {
     
 const renderSelectProduct = () => {  
     selectList.innerHTML = ""; 
-
+    
     selectProducts.forEach((product) => {
     
     let li = document.createElement("li");
@@ -101,25 +99,50 @@ const renderSelectProduct = () => {
     deleteIcon.title = "Eliminar del carrito";
     deleteIcon.classList.add("remove-to-select");
 
+    li.appendChild(deleteIcon);
     li.appendChild(selectImg);
     li.appendChild(selectTitle);
     li.appendChild(selectPrice);
-    li.appendChild(deleteIcon);
     selectList.appendChild(li);
 
     deleteIcon.addEventListener ("click", () => {
         const indexSelectProduct = selectProducts.findIndex (select => select.id === product.id);
         selectProducts.splice(indexSelectProduct,1);
         const button = document.querySelector(`.card-button[data-id="${product.id}"]`);
-        if (button) button.textContent = "Comprar";
+        if (button) {
+         button.textContent = "Comprar";
+         button.classList.remove("delete-button-card");
+        }    
+        
         renderSelectProduct();
     })
 })};
 
-
 loadProduct();
 
+
+const findBtn = document.querySelector (".form-section_search-btn");
+const findInput = document.querySelector(".form-section_search-input");
+const notAvailable = document.querySelector(".not-available");
+
+const handleClickFind = (event) => {
+    event.preventDefault();
+    console.log("click")
+    const findText = findInput.value.toLowerCase();
+    const findProduct = initialProducts.filter(product => product.title.toLowerCase().includes(findText));
+    htmlListProduct.innerHTML="";
+    if (findProduct.length === 0) {
+        notAvailable.innerHTML = "Producto no disponible";
+        
+    } else {
+        findProduct.forEach(product => {
+            const card = buildCard(product);
+            htmlListProduct.appendChild(card);
+        });
+    }
+}
     
+findBtn.addEventListener ("click", handleClickFind);
     
     
 

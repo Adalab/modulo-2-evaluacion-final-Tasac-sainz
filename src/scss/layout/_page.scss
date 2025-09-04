@@ -5,6 +5,47 @@ body {
     height: 100vh;
     font-family: vars.$font-main;
     
+    .form-section {
+        display: flex;
+        justify-content: center;
+
+        form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+       
+            .form-section_search-input {
+                width: 60%;
+                border-radius: 7px;
+                padding: 4px;
+            }
+            .form-section_search-btn {
+                padding: 7px;
+                background-color: rgb(61, 162, 61);
+                color: white;
+                font-weight: 600;
+                border-radius: 7px;
+                
+            }
+        }
+    }
+    
+    .message {
+        display: flex;
+        justify-content: center;
+
+        .not-available {
+            font-size: 30px;
+            font-weight: 800;
+            
+        }
+    }
+
+
+
+
+
     .product-content {
         display: flex;
         flex-direction: row-reverse;
@@ -46,6 +87,10 @@ body {
                         color: white;
                         font-weight: 600;
                     }
+                    .delete-button-card {
+                        background-color: rgba(61, 162, 61, 0.596);
+                        color: rgba(0, 0, 0, 0.623);
+                    }
                 }
             }
         }
@@ -79,7 +124,14 @@ body {
                     img {
                         width: 100%;
                         height: auto;
-                        padding: 15px;
+                        padding: 0 15px;
+                    }
+                    .remove-to-select {
+                        background-color: white;
+                        border: none;
+                        width: 50px;
+                        margin-left: 70px;
+
                     }
                 }
             }
