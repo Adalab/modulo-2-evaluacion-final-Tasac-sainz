@@ -42,10 +42,6 @@ body {
         }
     }
 
-
-
-
-
     .product-content {
         display: flex;
         flex-direction: row-reverse;
@@ -97,7 +93,10 @@ body {
     .aside {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
 
             .aside-text {
                 padding-top: 20px;
@@ -105,7 +104,15 @@ body {
                 font-weight: 800;
                 text-align: start;
             }
-
+            .delete-all-select-prod {
+                padding: 4px;
+                width: 50%;
+                font-size: 12px;
+                background-color: rgb(61, 162, 61);
+                border-radius: 7px;
+                color:white;
+                font-weight: 600;
+            }
             .select-product {
                 display: flex;
                 flex-direction: column;
@@ -131,8 +138,20 @@ body {
                         border: none;
                         width: 50px;
                         margin-left: 70px;
-
                     }
+                    .counter-container {
+                        display: flex;
+                        gap: 5px;
+                        padding-top: 7px;
+                        
+                        .count-button {
+                            font-size: 10px;
+                            width: 20px;
+                            font-weight: 900;
+                            
+                        }
+                    }
+
                 }
             }
     }
