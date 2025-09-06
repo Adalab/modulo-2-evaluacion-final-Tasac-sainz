@@ -211,6 +211,12 @@ const handleClickFind = (event) => {
 }
     
 findBtn.addEventListener ("click", handleClickFind);
+
+const showCart = document.querySelector(".button-cart");
+const cart = document.querySelector (".aside");
+showCart.addEventListener("click", () => {
+    cart.classList.toggle("aside-visible");
+})
     
     
 

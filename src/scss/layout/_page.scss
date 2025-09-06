@@ -1,9 +1,13 @@
 @use '../core/variables' as vars;
 
+
+
 body {
     padding: 2rem;
-    height: 100vh;
+    height: 100%;
     font-family: vars.$fontMain;
+    overflow-x: hidden;
+
 
     
     .form-section {
@@ -15,20 +19,20 @@ body {
             display: flex;
             justify-content: center;
             gap: 10px;
+            margin-bottom: 25px;;
        
             .form-section_search-input {
                 width: 60%;
                 border-radius: 7px;
                 padding: 4px;
             }
-            .form-section_search-btn {
+            .form-section_search-btn  {
                 padding: 7px;
                 background-color: rgb(61, 162, 61);
                 color: white;
                 font-weight: 500;
                 border-radius: 7px;
                 font-family: vars.$fontButton;
-                
             }
         }
     }
@@ -86,6 +90,7 @@ body {
                         font-weight: 600;
                         font-family: vars.$fontButton;
                     }
+
                     .delete-button-card {
                         background-color: rgba(61, 162, 61, 0.596);
                         color: rgba(0, 0, 0, 0.623);
@@ -98,29 +103,38 @@ body {
         flex-direction: column;
         gap: 10px;
         justify-content: center;
-        align-items: left;
+        flex-wrap: nowrap;
+        align-items: center;
         margin-top: 40px;
+        background-color: rgba(237, 234, 234, 0.768);
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 50vw;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
 
             .aside-text {
                 padding-top: 20px;
                 font-size: 20px;
                 font-weight: 800;
-                text-align: start;
+                text-align: center;
             }
             .total {
                 font-size: 15px;
             }
             .delete-all-select-prod {
-                padding: 4px;
-                width: 25%;
-                font-size: 12px;
+                width: 50%;
+                font-size: 15px;
                 background-color: rgb(61, 162, 61);
                 border-radius: 7px;
                 color:white;
                 font-weight: 600;
                 font-family: vars.$fontButton;
-                font-size: 15px;
-                
+
+                               
             }
             .select-product {
                 display: flex;
@@ -143,7 +157,7 @@ body {
                         padding: 0 15px;
                     }
                     .remove-to-select {
-                        background-color: white;
+                        background-color:rgba(237, 234, 234, 0.768);
                         border: none;
                         width: 50px;
                         margin-left: 70px;
@@ -164,22 +178,67 @@ body {
                 }
             }
     }
+    .aside-visible {
+        transform: translateX(0);
+    }
+        .alt-aside {
+            display: block;
+            position: fixed;
+            top: 255px;
+            left: 25px;
+            text-align: right;
+            .button-cart {
+                display: flex;
+                border-radius: 50px;
+                width: 50px;
+                height: 50px;
+                padding: 0;
+                border: none;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(61, 162, 61, 0.596);
+                    .cart-shop {
+                        width: 80%;
+                        height: 80%;
+                        padding: 0;
+                        margin: 0;    
+                        object-fit: cover;   
+                    }
+            }
+        }
     
     }
-}
 
 
-@media screen and (min-width: 700px) {
-    
-    .product-content {
+    @media screen and (min-width: 700px) {
+    .product-content{   
+        flex-direction: row-reverse;
+        align-items: stretch; 
+        gap: 20px;
+
+        .alt-aside {
+            display: none;
+        }
         .aside {
-            display: flex;
-            width: 40%;
-        }
-        .product-section {
-            width: 60%;
+            position: relative;
+            transform: none;
+            visibility: visible;
+            z-index: 0;
+            width: 40%;  
+            min-width: 250px;     
+            padding: 30px; 
+            justify-content: flex-start;
+            align-items: center;
+            background-color: white;
+                .select-product {
+                    background-color: white;
+                    .select-card {
+                        .remove-to-select {
+                            background-color: white;
+                        }
+                    }
+                }
+            }
         }
     }
-
-    
 }

@@ -1,11 +1,17 @@
 @use "../core/variables" as vars;
 
 .page__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 3rem;
-  font-family: vars.$fontTitle;
-  font-size:  30px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-bottom: 3rem;
+    font-family: vars.$fontTitle;
+    font-size:  30px;
+    background-image: url(../images/fenix_circle.png);
+    background-size: 5%;
+    background-repeat: no-repeat; 
+    color: black;
 }
+
+  
+
