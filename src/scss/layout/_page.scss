@@ -3,7 +3,7 @@
 body {
     padding: 2rem;
     height: 100vh;
-    font-family: vars.$font-main;
+    font-family: vars.$fontMain;
     
     .form-section {
         display: flex;
@@ -95,7 +95,7 @@ body {
         flex-direction: column;
         gap: 10px;
         justify-content: center;
-        align-items: center;
+        align-items: left;
         margin-top: 40px;
 
             .aside-text {
@@ -104,14 +104,18 @@ body {
                 font-weight: 800;
                 text-align: start;
             }
+            .total {
+                font-size: 15px;
+            }
             .delete-all-select-prod {
                 padding: 4px;
-                width: 50%;
+                width: 25%;
                 font-size: 12px;
                 background-color: rgb(61, 162, 61);
                 border-radius: 7px;
                 color:white;
                 font-weight: 600;
+                
             }
             .select-product {
                 display: flex;
