@@ -141,7 +141,10 @@ body {
                 flex-direction: column;
                 gap: 25px;
                 padding: 20px;
+                height:75%;
                 font-size: 12px;
+                overflow-y: auto;
+
                 
                 .select-card {
                     width: 50%;
