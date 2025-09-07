@@ -3,67 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adalab Web Starter Kit</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <title>ALL for YOU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+SA+Beginner:wght@400..700&family=Lilita+One&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
     
-    <link rel="icon" href="./images/favicon.png" />
-    <link rel="stylesheet" href="./assets/main-62015576.css">
+    <link rel="icon" href="../images/fenix simple.png" />
+    <link rel="stylesheet" href="./assets/index-32d21a16.css">
   </head>
 
-  <body>
+  <body id="start">
     <div class="page">
       <header class="page__header">
-  <img src="./images/logo-adalab.png" alt="Adalab">
-  <h1>Bienvenidos a Adalab</h1>
+  <div class="header-title">
+  <h1><strong>ALL</strong> <i>for</i> <strong>YOU</strong></h1>
+  <h3>Tu tienda on-line</h3>
 </header>
 
       <main class="page__main">
-  <h2>Este es el starter kit de Adalab</h2>
-  <p>Lo usamos para aprender:</p>
-  <ul class="main__list">
-    <li>Sass</li>
-    <li>HTML partials</li>
-    <li>Gulp</li>
-    <li>y muchas cosas más</li>
-  </ul>
-  <p>Si quieres saber cúales son las rutas correctas para:</p>
-  <ul class="main__list">
-    <li>
-      una <code class="code">&lt;img /&gt;</code> mira el fichero
-      <code class="code">./src/html/partials/header.html</code>.
-    </li>
-    <li>
-      y para un <code class="code">background-image</code> mira el fichero
-      <code class="code">./src/html/scss/layout/_page.scss</code>.
-    </li>
-  </ul>
-  <p>
-    Si quieres saber cómo usar un partial HTML dentro de otro partial, busca en la carperta
-    <code class="code">./src/html/index.html</code> y
-    <code class="code">./src/html/partials/main.html</code>, y verás cómo estamos creando estos
-    enlaces:
-  </p>
-  <ul class="main__list">
-    <li>
-      <a class="link__adalab" href="https://adalab.es">Adalab</a>
+    
+    <section class="form-section">
+        <form action="./" method="get">
+            <input type="text" name="search-input" id="search-input" class="form-section_search-input" placeholder="Example: Women" />
+            <button type="submit" class="form-section_search-btn" title="Buscar">Find</button>
+            <button type="submit" class="form-section_search-btn" title="Actualizar">↩</button>
+        </form>
+    </section>
+    
+    <div class="message">
+        <p class="not-available"></p>
+    </div>
+    
+    <div class="product-content">
+        <section class="product-section">
+            <ul class="product-section_list"></ul>
+        </section>
+        <div class="anchor">
+            <a href="#start" title="Ir arriba">☝️</a>
+        </div>
+        
+        
+        <aside class="aside">
+            <p class="aside-text">Carrito de compra</p>
+            <div class="total"></div>
+            <button class="delete-all-select-prod">Vaciar carrito</button>
+            <ul class="select-product"></ul>
+        </aside>
+        <div class="alt-aside">
+            <button type="button" title="Mostrar carrito" class="button-cart">
+                <img src="./images/shopping-cart.png" alt="carrito de compra" class="cart-shop">
+            </button>
+        </div>
+    </div>
 
-    </li>
-    <li>
-      <a class="{=$aClass}" href="./more-info.html">Más info del starter kit</a>
-
-    </li>
-  </ul>
 </main>
 
-      <footer class="page__footer">
-  <small>
-    &copy; Todos los derechos reservados
-    <a class="link__adalab" href="https://adalab.es">Adalab</a>
 
-  </small>
+      <footer class="page__footer">
+    <img class="footer-icon" src="../images/fenix_circle.png" alt="logotipo" />
+    <p class="footer-title">All for You</p>
+    <p class="brand">Kaski ...keep coding...</p>
 </footer>
 
     </div>
     <script src="./js/main.js"></script>
   </body>
+
 </html>
