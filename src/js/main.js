@@ -103,7 +103,7 @@ const renderSelectProduct = () => {
     deleteIcon.classList.add("remove-to-select");
     deleteIcon.title = "Eliminar";   
     const deleteImg = document.createElement("img");
-    deleteImg.src="public/images/recycle.png";
+    deleteImg.src="images/recycle.png";
     deleteImg.classList.add("delete-icon-img");
     deleteIcon.appendChild(deleteImg);
     deleteIcon.title = "Eliminar del carrito";
