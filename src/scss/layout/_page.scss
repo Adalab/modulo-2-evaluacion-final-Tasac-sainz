@@ -52,6 +52,13 @@ body {
         display: flex;
         flex-direction: row-reverse;
         align-items: start;
+        padding-bottom: 60px;
+
+        .anchor {
+            position: fixed;
+            transform: translateY(200%);
+            font-size: 30px;
+        }
 
         .product-section {
             width: 100%;
@@ -106,7 +113,7 @@ body {
         flex-wrap: nowrap;
         align-items: center;
         margin-top: 40px;
-        background-color: rgba(237, 234, 234, 0.768);
+        background-color: rgba(237, 234, 234, 0.9);
         position: fixed;
         top: 0;
         right: 0;
